@@ -49,7 +49,7 @@ class Nasabah extends CI_Controller
         $date_to     = $this->input->post('date_to');
         $pertanggungan     = $this->input->post('pertanggungan');
         $harga     = $this->input->post('harga');
-        $harga_format = str_replace('.','', $harga);
+        $harga_format = str_replace(',','', $harga);
         $jenis     = $this->input->post('jenis');
         $banjir    = $this->input->post('banjir');
         $gempa    = $this->input->post('gempa');
@@ -73,6 +73,7 @@ class Nasabah extends CI_Controller
         $date_to     = $this->input->post('date_to');
         $pertanggungan     = $this->input->post('pertanggungan');
         $harga     = $this->input->post('harga');
+        $harga_format = str_replace(',','', $harga);
         $jenis     = $this->input->post('jenis');
         $banjir    = $this->input->post('banjir');
         $gempa    = $this->input->post('gempa');
@@ -82,7 +83,7 @@ class Nasabah extends CI_Controller
         $computer = gethostname();
         $data = [
             'nama' => $nama, 'date_from' => $date_from, 'date_to' => $date_to,
-            'pertanggungan' => $pertanggungan, 'harga' => $harga, 'banjir' => $banjir,
+            'pertanggungan' => $pertanggungan, 'harga' => $harga_format, 'banjir' => $banjir,
             'id_jenis' => $jenis, 'gempa' => $gempa,
             'updated_by' => $updated_by, 'updated_date' => $updated_date,'computer' => $computer
         ];
@@ -103,7 +104,7 @@ class Nasabah extends CI_Controller
             $sub_array[] = $row->date_from;
             $sub_array[] = $row->date_to;
             $sub_array[] = $row->pertanggungan;
-            $sub_array[] = $row->harga;
+            $sub_array[] = $row->harganew;
             $sub_array[] = $row->jenis;
             $sub_array[] = $row->banjir;
             $sub_array[] = $row->gempa;

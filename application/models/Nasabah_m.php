@@ -5,7 +5,7 @@ class Nasabah_m extends CI_Model
     function getDataByID($id_nasabah)
     {
         $this->db->where('id_nasabah', $id_nasabah);
-        return $this->db->get('tbl_nasabah')->result();
+        return $this->db->get('vwnasabah')->result();
     }
 
     function deleteData($id_nasabah, $data)

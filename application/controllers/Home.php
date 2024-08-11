@@ -11,6 +11,7 @@ class Home extends CI_Controller
 	{
 		check_not_login();
         $data['login'] = $this->Home_m->getLogin();
+        $data['nasabah'] = $this->Home_m->getNasabah();
 		$this->template->load('template', 'V_Home', $data);
 	}
 
