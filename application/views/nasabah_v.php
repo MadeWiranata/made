@@ -164,18 +164,18 @@
         mat2.value = formatDe(this.value);
     });
     function formatDe(angka){
-        var number_string = angka.replace(/[^,\d]/g, '').toString(),
-        split   		= number_string.split(','),
+        var number_string = angka.replace(/[^.\d]/g, '').toString(),
+        split   		= number_string.split('.'),
         sisa     		= split[0].length % 3,
         rupiah     		= split[0].substr(0, sisa),
         ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
 
         if(ribuan){
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
+            separator = sisa ? ',' : '';
+            rupiah += separator + ribuan.join(',');
         }
 
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        rupiah = split[1] != undefined ? rupiah + '.' + split[1] : rupiah;
         return rupiah;
     }
 </script>
@@ -215,10 +215,6 @@
                         "className": "dt-body-center",
                         "targets": "_all",
                     },
-                    { targets: [ 5 ],
-                        render: function (data, type, row) {
-                        return data === 0 ? 0 : $.fn.dataTable.render.number( '.', ',', ).display( data );
-                    }}
 
                 ],
             });
@@ -367,7 +363,7 @@
                     $('input[name="date_from_edit"]').val(response[0].date_from);
                     $('input[name="date_to_edit"]').val(response[0].date_to);
                     $('input[name="pertanggungan_edit"]').val(response[0].pertanggungan);
-                    $('input[name="harga_edit"]').val(response[0].harga);
+                    $('input[name="harga_edit"]').val(response[0].harganew);
                     $("#jenis_edit").select2().val(response[0].id_jenis).trigger('change');
                     $('input[type="checkbox"][name="banjir_edit"]').prop('checked', false);
                     $('input[type="checkbox"][name="gempa_edit"]').prop('checked', false);

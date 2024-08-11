@@ -34,7 +34,7 @@
                 <tr>
                     <td>Harga Pertanggungan</td>
                     <td> : </td>
-                    <td><?= $mde->harga ?> <?= $mde->harga ?></td>
+                    <td><?= $mde->harganew ?></td>
                 </tr>
                     <td></br></td>
                 <tr>
@@ -66,17 +66,17 @@
                 <tr>
                     <td>Premi Kendaraan</td>
                     <td> : </td>
-                    <td><?= $mde->premi ?></td>
+                    <td><?= $mde->preminew ?></td>
                 </tr>
                 <tr>
                     <td>Banjir : </td>
                     <td> : </td>
-                    <td><?= $mde->prebanjir ?></td>
+                    <td><?= $mde->prebanjirnew ?></td>
                 </tr>
                 <tr>
                     <td>Gempa : </td>
                     <td> : </td>
-                    <td><?= $mde->pregempa ?></td>
+                    <td><?= $mde->pregempanew ?></td>
                 </tr>
                 <td></br></td>
                 <tr>
